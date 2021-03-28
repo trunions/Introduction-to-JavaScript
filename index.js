@@ -18,7 +18,13 @@ Do the following:
    HINT: no function required
 */
 
+let votingAge = 21;
 
+if (votingAge >= 18){
+  console.log('true');
+} else {
+  console.log('false')
+}
 
 /*
 Task 1b - Values
@@ -31,9 +37,14 @@ Do the following:
    HINT: no function required
 */
 
+var num1 = 3;
+var num2 = 6;
 
-
-
+if (num2 === 6){
+  console.log(num1 + 5);
+} else {
+  console.log('false');
+}
 
 /*
 Task 1c - Convert Strings to Numbers
@@ -46,7 +57,9 @@ Do the following:
    HINT: look up the Number method
 */
 
-
+var year = '1999';
+var number = parseInt(year, 10);
+console.log(number);
 
 
 /*
@@ -58,9 +71,13 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
-  }
+function multiply(a , b){
+  var math = a * b;
+return math;
+}
+
+console.log(multiply(2 , 5));
+
 
 
 
@@ -74,11 +91,12 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(dogAge){
+  var age = dogAge * 7;
+  return age
 }
 
-
+console.log(dogYears(5));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -107,8 +125,24 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(dogAge , dogWeight){
+    if (dogAge >= 1 && dogWeight <= 5){
+      return dogWeight * 0.05;
+    }else if (dogAge >= 1 && dogWeight <= 10){
+      return dogWeight - 0.04;
+    }else if (dogAge >= 1 && dogWeight <= 15){
+      return dogWeight * 0.03;
+    }else if (dogAge >= 1 && dogWeight > 15){
+      return dogWeight * 0.03;
+    } else if (dogAge <= 0.16 && dogAge <= 0.33){
+      return dogWeight * 0.10;
+    }else if (dogAge <= 0.33 && dogAge <= 0.58){
+      return dogWeight * 0.05;
+    }else if (dogAge <= 0.58 && dogAge < 1){
+      return dogWeight * 0.04;
+    } else {
+      console.log('invalid input');
+    }
   }
 
 
