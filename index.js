@@ -169,7 +169,7 @@ Use the game function below to do the following:
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
-var computer = Math.random();
+let computer = Math.random();
 if (computer <= 0.33){
   computer = 'rock';
 }else if (computer <= 0.66){
@@ -177,14 +177,13 @@ if (computer <= 0.33){
 }else if (computer > 0.66){
   computer = 'paper';
 }
-console.log(computer);
 
 function game(user, computer){
- if (computer === user){
+ if (user === computer){
    return "it's a tie";
  }  else if (user === 'paper' && computer === 'rock'){
    return "you win!";
- }else if (user === 'rock' && computer === 'scissor'){
+ }else if (user === 'rock' && computer === 'scissors'){
    return "you win!";
  }else if (user === 'scissors' && computer == 'paper'){
    return "you win!"
@@ -193,7 +192,7 @@ function game(user, computer){
  }
 }
   
-  console.log(game('paper',computer));
+  console.log(game('scissors', computer));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -207,7 +206,7 @@ Using the miles function below do the following:
 */
 
 function miles(kilometers){
-    return ((kilometers / 8) * 5);
+    return kilometers * 0.621371;
   }
 
   console.log(miles(15));
@@ -239,9 +238,13 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+function annoyingSong(number){
+  for(let i=number; i > 1; i--){
+        return `${number} bottles of soda on the wall, ${number--} bottles of soda, take one down pass it around ${number} bottles of soda on the wall`
   }
+}
+
+console.log(annoyingSong(99));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -259,10 +262,21 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+function grade(score){
+  if(score >= 90){
+    return 'you got an A';
+  }else if (score >= 80){
+    return 'you got a B';
+  }else if (score >= 70){
+    return 'you got a C';
+  }else if (score >= 60){
+    return 'you got a D';
+  }else{
+    return 'you got an F';
+  }
   }
   
+  console.log(grade(100));
   
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
