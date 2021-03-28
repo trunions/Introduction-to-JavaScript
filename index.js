@@ -125,7 +125,7 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(dogAge , dogWeight){
+function hungryDog(dogWeight , dogAge){
     if (dogAge >= 1 && dogWeight <= 5){
       return dogWeight * 0.05;
     }else if (dogAge >= 1 && dogWeight <= 10){
@@ -134,16 +134,18 @@ function hungryDog(dogAge , dogWeight){
       return dogWeight * 0.03;
     }else if (dogAge >= 1 && dogWeight > 15){
       return dogWeight * 0.03;
-    } else if (dogAge <= 0.16 && dogAge <= 0.33){
+    } else if (dogAge >= 0.16 && dogAge <= 0.33){
       return dogWeight * 0.10;
-    }else if (dogAge <= 0.33 && dogAge <= 0.58){
+    }else if (dogAge >= 0.33 && dogAge <= 0.58){
       return dogWeight * 0.05;
-    }else if (dogAge <= 0.58 && dogAge < 1){
+    }else if (dogAge >= 0.58 && dogAge < 1){
       return dogWeight * 0.04;
     } else {
       console.log('invalid input');
     }
   }
+
+  console.log(hungryDog(15 , 1));
 
 
 
@@ -167,12 +169,31 @@ Use the game function below to do the following:
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
+var computer = Math.random();
+if (computer <= 0.33){
+  computer = 'rock';
+}else if (computer <= 0.66){
+  computer = 'scissors';
+}else if (computer > 0.66){
+  computer = 'paper';
+}
+console.log(computer);
 
 function game(user, computer){
-    /*add your code here*/
+ if (computer === user){
+   return "it's a tie";
+ }  else if (user === 'paper' && computer === 'rock'){
+   return "you win!";
+ }else if (user === 'rock' && computer === 'scissor'){
+   return "you win!";
+ }else if (user === 'scissors' && computer == 'paper'){
+   return "you win!"
+ }else {
+   return "you lose!"
+ }
 }
   
-  
+  console.log(game('paper',computer));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
